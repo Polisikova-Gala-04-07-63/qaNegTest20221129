@@ -33,6 +33,8 @@ public class NegTest extends TestBase {
     public void GoodAuthBadAuth() throws InterruptedException {
         //попробуйте плохую авторизацию
         negAuth();
+        Thread.sleep(2000);
+
 
         //попробуйте авторизацию менеджера
         managerAuth();

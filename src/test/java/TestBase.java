@@ -1,7 +1,9 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -52,6 +54,8 @@ public class TestBase {
         passWord.clear();
         passWord.sendKeys("123456");
         Thread.sleep(2000);
+        Actions actions = new Actions(wd);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
 
         //Отправить форму
         WebElement signIn = wd.findElement(By.id("sw-sign-in-submit-btn"));
@@ -108,7 +112,7 @@ public class TestBase {
 
     public void checkClientsLink(){
         //Ссылка «Проверить наличие клиентов» на странице
-        WebElement clients = wd.findElement(By.xpath("//*[@id=\"home-header1\"]/div/div[1]/ul/li[2]/a"));
+        WebElement clients = wd.findElement(By.xpath("/html/body/div[1]/nav/div/div[1]/ul/li[2]/a"));
     }
 
     public void checkForIncorrectData(){
