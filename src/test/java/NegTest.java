@@ -10,13 +10,14 @@ import org.testng.annotations.Test;
 public class NegTest extends TestBase {
 
 
+
     @Test
     public void negAuthTest() throws InterruptedException {
         //попробуйте авторизоваться с плохими кредитами
         negAuth();
 
         //убедитесь, что отображается сообщение об ошибке
-        declareVariables();
+        checkForIncorrectData();
     }
 
     @Test
@@ -39,4 +40,10 @@ public class NegTest extends TestBase {
         checkClientsLink();
     }
 
-    }
+}
+
+
+
+
+
+
