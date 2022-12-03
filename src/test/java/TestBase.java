@@ -7,8 +7,13 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TestBase {
+
+     final static Logger logger = LoggerFactory.getLogger(TestBase.class);
+
     WebDriver wd;
 
     @BeforeTest
@@ -16,6 +21,8 @@ public class TestBase {
         wd = new ChromeDriver();
         wd.get("https://derrick686.softr.app/login");
         wd.manage().window().maximize();
+        logger.info("Running a test: prepare");
+
     }
 
     public void negAuth() throws InterruptedException {
